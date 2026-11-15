@@ -1,0 +1,7 @@
+timestamp,astronaut_id,mission_day,scenario_id,scenario_label,cum_dose_msv,proton_flux_pfu,flare_active,sleep_h,hrv_rmssd_ms,hrv_baseline_ms,fatigue,stress,loading_index,loading_target,balance_score,cabin_o2_pct,cabin_co2_ppm,cabin_pressure_kpa,cabin_temp_c,cabin_humidity_pct,scrubber_state,latency_s,open_medical_flags,source
+2026-11-01T00:00:00Z,SIM-BAD,1,0,NOMINAL,50.0,0.47,0,7.59,55.8,55.0,2.0,1.8,99.1,100.0,94.3,21.02,2517.0,101.21,22.1,45.0,nominal,1.29,0,USER-ENTERED
+2026-11-02T00:00:00Z,SIM-BAD,2,0,NOMINAL,50.5,0.45,0,7.6,53.8,55.0,2.0,1.9,100.4,100.0,95.0,21.03,2455.0,101.26,22.1,44.0,nominal,1.28,0,USER-ENTERED
+2026-11-03T00:00:00Z,SIM-BAD,3,0,NOMINAL,51.0,0.44,0,7.35,54.3,55.0,1.9,1.7,100.5,100.0,94.4,20.98,2520.0,101.3,22.2,45.6,nominal,1.26,0,USER-ENTERED
+2026-11-02T00:00:00Z,SIM-BAD,2,0,NOMINAL,50.5,0.45,0,7.6,53.8,55.0,2.0,1.9,100.4,100.0,95.0,21.03,2455.0,101.26,22.1,44.0,nominal,1.28,0,USER-ENTERED
+2027-06-01T00:00:00Z,SIM-BAD,212,0,NOMINAL,51.0,0.44,0,7.35,54.3,55.0,1.9,1.7,100.5,100.0,94.4,20.98,2520.0,101.3,22.2,45.6,nominal,1.26,0,USER-ENTERED
+2026-11-05T00:00:00Z,SIM-BAD,5,0,NOMINAL,51.0,0.44,0,-3,54.3,55.0,1.9,1.7,100.5,100.0,94.4,20.98,2520.0,101.3,22.2,45.6,nominal,1.26,0,USER-ENTERED
