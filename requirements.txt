@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=2
+pydantic>=2
+httpx
+pandas
+numpy
+python-multipart
+pytest
