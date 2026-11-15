@@ -33,6 +33,5 @@
 - `CORS_ORIGINS` default is `null,http://localhost:8090,http://127.0.0.1:8090`. The `null` origin is needed for pages opened from `file://` (the single-file build). Remove it for shared deployments.
 - Suspect flags are persisted in `health_records.suspect_metrics` as JSON. Rows stored before this change return `null` for that field.
 - Settings weights and thresholds apply only to assessments computed after the change. Existing assessments are not recomputed.
-- NASA Research (OSDR) is shown as a labelled, not-connected panel. No OSDR data is fetched or displayed.
 - Roadmap hooks (wearables, ECLSS links, predictive ML) are not connected.
 - Five of the PLAN §7 tables (`dose_records`, `exercise_sessions`, `balance_tests`, `cabin_telemetry`, `comm_link_log`) are not separate tables. Their values live in `health_records` rows.

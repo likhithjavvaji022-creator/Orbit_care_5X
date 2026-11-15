@@ -2,7 +2,10 @@ venv/
 .venv/
 __pycache__/
 *.pyc
-*.db
+# SQLite database (un-ignored so the pre-populated demo data is deployed)
+!orbitcare.db
+*.sqlite
+*.sqlite3
 .env
 node_modules/
 .pytest_cache/

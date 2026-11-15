@@ -15,7 +15,6 @@ const SECTIONS = [
   { id: 'ai-risk', title: 'AI Risk Analysis', dyn: './pages/ai-risk.js' },
   { id: 'flight-surgeon-hud', title: 'Flight Surgeon HUD', page: hud, opts: { mode: 'hud' } },
   { id: 'mission-simulator', title: 'Mission Simulator', dyn: './pages/simulator.js' },
-  { id: 'nasa-research', title: 'NASA Research' },
   { id: 'alerts', title: 'Alerts Centre', dyn: './pages/alerts.js' },
   { id: 'reports', title: 'Reports & Analytics', dyn: './pages/reports.js' },
   { id: 'settings', title: 'Settings', dyn: './pages/settings.js' },

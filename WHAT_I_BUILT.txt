@@ -1,0 +1,142 @@
+ORBITCARE 5X - WHAT THIS PROJECT IS, IN SIMPLE WORDS
+====================================================
+
+1. THE BIG IDEA
+---------------
+Astronauts in space face 5 big dangers (NASA calls them "hazards"):
+
+  1. Space radiation       - invisible energy from the Sun and stars that can harm the body
+  2. Distance from Earth   - far away, messages to doctors on Earth take a long time
+  3. Low gravity           - muscles and bones weaken without exercise
+  4. Closed air system     - the air inside the spaceship must be kept safe (oxygen, CO2)
+  5. Isolation and stress  - poor sleep, tiredness and stress
+
+ORBITCARE 5X is a website that watches all 5 dangers at once and gives the
+astronaut a simple "report card" grade, like in school: A+, A, B, C, D or F.
+
+
+2. HOW THE GRADING WORKS
+------------------------
+- Each of the 5 dangers gets its own score from 0 to 100.
+  Everyone starts at 100 (perfect) on Day 1. Points are taken away when
+  something looks bad (for example: CO2 in the air too high, slept less
+  than 6 hours, too much radiation).
+
+- Each score also gets a colour:
+    GREEN  = fine (75 or more)
+    YELLOW = getting worse (35 to 74)
+    RED    = serious (below 35)
+
+- The 5 scores are combined into ONE overall "Total Mission Grade".
+  Some dangers count more than others:
+    Radiation 25%, Air system 25%, Stress/sleep 20%,
+    Gravity 15%, Distance 15%
+
+- Two safety rules:
+    a) If ANY one danger is RED, the total grade can't be better than D,
+       even if everything else is perfect. (One serious problem matters.)
+    b) If 3 or more dangers are YELLOW or RED at the same time,
+       10 extra points are taken off. (Many problems together are worse.)
+
+- Letter grades: 95+ = A+, 90+ = A, 75+ = B, 55+ = C, 35+ = D, below 35 = F.
+
+
+3. WHAT YOU SEE ON THE WEBSITE (12 PAGES)
+-----------------------------------------
+ 1. Mission Control     - the main screen: 5 coloured tiles, the big total grade,
+                          a chart of how the grade changes day by day, and a
+                          button to upload a data file.
+ 2. Space Weather       - REAL live data from NOAA (the US space weather agency)
+                          about solar activity. If it can't connect, it says so
+                          and shows a "Retry" button - it never makes numbers up.
+ 3. Radiation Guard     - radiation details.
+ 4. Crew Health /
+    Mental Health Guard - sleep, heart-rate, tiredness and stress.
+ 5. Gravity Guard       - exercise and balance.
+ 6. Life Support Guard  - oxygen, CO2, air pressure, temperature, humidity.
+ 7. Earth Distance Guard- message delay to Earth, plus a simple step-by-step
+                          checklist helper (it never suggests medicines).
+ 8. AI Risk Analysis    - explains in plain words WHY each score dropped.
+ 9. Flight Surgeon HUD  - a quick one-glance summary for the space doctor.
+10. Alerts              - warnings when something turns yellow or red.
+11. Mission Simulator   - "what if" sliders: move them and watch the grade change.
+12. Reports & Settings  - download data, change the grading weights, reset the demo.
+
+Not finished: the "NASA Research" page. It is clearly marked "not connected"
+instead of showing anything fake.
+
+
+4. WHERE THE DATA COMES FROM
+----------------------------
+- There are no real astronauts here. All crew data is SIMULATED (made up by a
+  computer program) for a fictional astronaut called "SIM-A1", and every
+  screen labels it SIMULATED.
+- The sample file (data/sample/workflow_a_31_scenarios.csv) has 32 days:
+  Day 1 is perfect, then each day turns on a different mix of the 5 dangers
+  (there are 31 possible mixes). Uploading it shows the grade sliding from
+  A+ (about 98.5) down to D (39.6).
+- "Live Simulation Stream" button: adds a new pretend day every 4 seconds.
+- Space weather is the only live, real-world data.
+
+
+5. WHAT HAPPENS BEHIND THE SCENES (7 STEPS)
+-------------------------------------------
+When data comes in, it goes through 7 steps, like a factory line:
+  1. Receive the readings
+  2. Check them (throw out impossible values, duplicates, future dates)
+  3. Learn what is "normal" for that astronaut
+  4. Spot unusual changes
+  5. Calculate the 5 scores and the total grade
+  6. Prepare the doctor's summary screen
+  7. Create warnings (without repeating the same warning twice a day)
+
+
+6. IMPORTANT HONESTY NOTES
+--------------------------
+- This is NOT a medical device. It does not diagnose anyone. The grades are an
+  illustrative "screening" score for a hackathon demo.
+- The point deductions are example numbers chosen for the demo, not scientific
+  medical values.
+- It does not predict solar storms.
+
+
+7. HOW IT IS BUILT (FOR THE CURIOUS)
+------------------------------------
+- Back end (the "engine", runs on your computer): Python, FastAPI, SQLite database.
+- Front end (what you see in the browser): plain HTML, CSS, JavaScript, and
+  Chart.js for charts.
+- 36 automatic tests check the grading maths and the website's data functions.
+  All 36 passed on the last run.
+- There is also a single-file version: dist/orbitcare5x.html
+
+
+8. HOW TO RUN IT
+----------------
+Open a terminal in this folder and type:
+
+    pip install -r requirements.txt
+    python -m uvicorn backend.app.main:app --port 8000
+
+Then open http://localhost:8000 in your web browser.
+On Mission Control, upload: data/sample/workflow_a_31_scenarios.csv
+
+To run the automatic tests:
+
+    python -m pytest backend/tests -q
+
+
+9. MAIN FOLDERS
+---------------
+  backend/     the engine (grading maths, data handling, database)
+  frontend/    the website pages
+  data/sample/ the made-up example data
+  scripts/     small helper programs (make sample data, build single file)
+  dist/        the single-file website
+  docs/        notes: test results, assumptions, progress, 5-minute demo script
+  README.md    the technical guide
+
+
+10. NOT DONE YET
+----------------
+- NASA Research page (shown as "not connected")
+- Automatic browser tests (Playwright) and a Docker test run
